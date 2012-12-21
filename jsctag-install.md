@@ -1,10 +1,19 @@
 # Install jsctags
+jsctags is a feature that ships in the doctorjs repo. It mimics ctags in output but is designed for a better introspection of JavaScript.
 
-The latest build has a number of errors. Most importantly, it [gets scope wrong](https://github.com/mozilla/doctorjs/issues/5)  Check out this old commit and everything should work fine.
+The main doctorjs repo is way behind and has a number of issues. Using the tmcw fork.
 
-	git://github.com/mozilla/doctorjs.git
-	cd doctorjs
-	git checkout 1062dd31625cc002261f15e68af77eedd63a56f6
-	sudo make install
-	cd ..
-	rm -rf doctorjs
+1. Install [Node.js](http://nodejs.org/)
+
+2. Install doctorjs
+
+		git clone --recursive git://github.com/tmcw/doctorjs.git
+		cd doctorjs
+		sudo make install
+		cd ..
+		rm -rf doctorjs
+
+3. Add the following to `~/.bash_profile`:
+
+		export NODE_PATH="/usr/local/lib/node"
+		NODE_PATH='/usr/local/lib/jsctags:${NODE_PATH}'
