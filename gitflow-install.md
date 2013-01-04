@@ -14,7 +14,7 @@
 	$ rm gitflow-installer.sh
 	$ brew install gnu-getopt
 
-Create a ~/.gitflow_export with the content alias getopt="$(brew --prefix gnu-getopt)/bin/getopt".
+Create a ~/.gitflow_export with the content `alias getopt="$(brew --prefix gnu-getopt)/bin/getopt"`.
 
 ## Install git-completion
 
