@@ -49,3 +49,44 @@ Add the following to your ~/.bash_profile:
 ## Initialization of a new repo
 	
 	$ git flow init
+	
+## Basic Usage
+
+* To list/start/finish/delete feature branches, use:
+
+  		git flow feature
+  		git flow feature start <name> [<base>]
+  		git flow feature finish <name>
+  		git flow feature delete <name>
+
+  For feature branches, the `<base>` arg must be a commit on `develop`.
+
+* To push/pull a feature branch to the remote repository, use:
+
+  		git flow feature publish <name>
+		git flow feature pull <remote> <name>
+
+* To list/start/finish/delete release branches, use:
+
+  		git flow release
+  		git flow release start <release> [<base>]
+  		git flow release finish <release>
+  		git flow release delete <release>
+
+  For release branches, the `<base>` arg must be a commit on `develop`.
+
+* To list/start/finish/delete hotfix branches, use:
+
+  		git flow hotfix
+  		git flow hotfix start <release> [<base>]
+  		git flow hotfix finish <release>
+  		git flow hotfix delete <release>
+
+  For hotfix branches, the `<base>` arg must be a commit on `master`.
+
+* To list/start support branches, use:
+
+  		git flow support
+  		git flow support start <release> <base>
+
+  For support branches, the `<base>` arg must be a commit on `master`.
