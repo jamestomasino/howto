@@ -23,7 +23,7 @@ If the install fails, you already have git installed. Try this instead:
 	
 	$ brew install bash-completion
 	
-Install the following to your ~/.bash_profile:
+Edit your `~/.bash_profile` and add the following:
 	
 	if [ -f `brew --prefix`/etc/bash_completion ]; then
 		. `brew --prefix`/etc/bash_completion
@@ -39,7 +39,7 @@ Restart your terminal or run:
 	$ chmod 755 git-flow-completion.bash
 	$ mv git-flow-completion.bash ~/.git-flow-completion.sh
 	
-Add the following to your ~/.bash_profile:
+Edit your `~/.bash_profile` and add the following:
 
 	if [ -f ~/.git-flow-completion.sh ] ; then
 		source ~/.git-flow-completion.sh
