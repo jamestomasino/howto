@@ -45,11 +45,11 @@ Edit your `~/.bash_profile` and add the following:
 		source ~/.git-flow-completion.sh
 	fi
 
-## Initialization of a new repo
-	
-	$ git flow init
-	
 ## Basic Usage
+
+* To initializatize a new repo
+	
+  		git flow init
 
 * To list/start/finish/delete feature branches, use:
 
