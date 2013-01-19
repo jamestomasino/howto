@@ -35,7 +35,7 @@ Restart your terminal or run:
 
 ## Install git-flow-completion
 
-	$ chmod 775 /usr/local/*
+	$ sudo chmod 775 /usr/local/*
 	$ brew install wget
 	$ wget https://raw.github.com/petervanderdoes/git-flow-completion/develop/git-flow-completion.bash
 	$ chmod 755 git-flow-completion.bash
