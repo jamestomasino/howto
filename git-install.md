@@ -2,25 +2,17 @@
 
 ## Install homebrew:
 
-	$ sudo chown -R `whoami` /usr/local
-	$ ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
+	$ sudo chown -R `whoami` /usr/local	
+	$ ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)	$ brew install wget
 	
 ## Install git
 
 	$ sudo mv /usr/bin/git /usr/bin/git-old
 	$ brew install git
-	
 
 ## Install gitflow
 
-	$ mkdir ~/bin
-	$ cd !$
-	$ curl https://raw.github.com/petervanderdoes/gitflow/develop/contrib/gitflow-installer.sh > gitflow-installer.sh
-	$ chmod a+x gitflow-installer.sh
-	$ sudo bash gitflow-installer.sh install stable
-	$ rm gitflow-installer.sh
-	$ brew install gnu-getopt
-	$ echo 'alias getopt="$(brew --prefix gnu-getopt)/bin/getopt"' > ~/.gitflow_export
+	$ brew install git-flow-avh --HEAD
 
 ## Install git-completion
 
@@ -36,10 +28,8 @@ Restart your terminal or run:
 	
 	$ source ~/.bash_profile
 
-## Install git-flow-completion
-
-	$ sudo chmod 775 /usr/local/*
-	$ brew install wget
+## Install git-flow-complet
+	
 	$ wget https://raw.github.com/petervanderdoes/git-flow-completion/develop/git-flow-completion.bash
 	$ chmod 755 git-flow-completion.bash
 	$ mv git-flow-completion.bash ~/.git-flow-completion.sh
@@ -49,6 +39,7 @@ Edit your `~/.bash_profile` and add the following:
 	if [ -f ~/.git-flow-completion.sh ] ; then
 		source ~/.git-flow-completion.sh
 	fi
+	
 
 ## Basic Usage
 
@@ -88,9 +79,20 @@ Edit your `~/.bash_profile` and add the following:
 
   For hotfix branches, the `<base>` arg must be a commit on `master`.
 
-* To list/start support branches, use:
 
-  		git flow support
-  		git flow support start <release> <base>
+## Troubleshooting
 
-  For support branches, the `<base>` arg must be a commit on `master`.
+* Error similar to:
+
+		flags:ERROR short flag required for (showcommands) on this platform
+		flags:ERROR short flag required for (local) on this platform
+		flags:ERROR short flag required for (global) on this platform
+		flags:ERROR short flag required for (system) on this platform
+		flags:ERROR short flag required for (file) on this platform
+		/usr/local/bin/gitflow-common: line 79: [: -eq: unary operator expected
+		/usr/local/bin/gitflow-common: line 79: [: -eq: unary operator expected
+		/usr/local/bin/gitflow-common: line 79: [: -eq: unary operator expected
+
+	`gnu-getopt` did not install properly. 
+	
+	Double check that you successfully ran ``sudo chown -R `whoami` /usr/local``. Thegn run `brew link gnu-getopt --force`.
