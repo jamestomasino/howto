@@ -96,4 +96,4 @@ Edit your `~/.bash_profile` and add the following:
 
 	`gnu-getopt` did not install properly. 
 	
-	Double check that you successfully ran ``sudo chown -R `whoami` /usr/local``. Thegn run `brew link gnu-getopt --force`.
+	Double check that you successfully ran ``sudo chown -R `whoami` /usr/local``. Then run `brew install gnu-getopt --force`.
