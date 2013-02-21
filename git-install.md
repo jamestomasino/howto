@@ -3,7 +3,8 @@
 ## Install homebrew:
 
 	$ sudo chown -R `whoami` /usr/local	
-	$ ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)	$ brew install wget
+	$ ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)	
+	$ brew install wget
 	
 ## Install git
 
