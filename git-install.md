@@ -1,10 +1,17 @@
-# gitflow and git-flow-completion Installation
+# git Installation - OSX
 
 ## Install homebrew:
 
+	$ sudo chown -R `whoami` /usr/local
 	$ ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
+	
+## Install git
 
-## Install gitflow on MacOSX:
+	$ sudo mv /usr/bin/git /usr/bin/git-old
+	$ brew install git
+	
+
+## Install gitflow
 
 	$ mkdir ~/bin
 	$ cd !$
@@ -18,10 +25,6 @@ Create a ~/.gitflow_export with the content alias getopt="$(brew --prefix gnu-ge
 
 ## Install git-completion
 
-	$ brew install git bash-completion
-
-If the install fails, you already have git installed. Try this instead:
-	
 	$ brew install bash-completion
 	
 Install the following to your ~/.bash_profile:
