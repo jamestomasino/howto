@@ -262,7 +262,17 @@ You have quite a library of tools at your disposal and you can now accomplish mo
 
 `\S` - NOT whitespace character. Matches anything not a whitespace character.
 
-Try tossing some of these characters into your tests and see what you can accomplish.
+In addition to these shortcut characters, there are a few special characters that don't have a specific keyboard representation. For these we use the special character syntax as well.
+
+`\t` - Tab.
+
+`\n` - New line.
+
+`\r` - Carriage Return.
+
+`\xFF` - A hexidecimal character represented by it's code.
+
+`\\` - A backslash. You need to escape a backslash in order to test it because a single backslash is reserved for indicating the start of a special character. This rule follows for other special regex characters, such as: `.+*?^$[]{}()|/`
 
 
 #### Specifying a number of characters ####
@@ -299,11 +309,17 @@ This gets us the right class no matter what, but we have too much information. W
 By wrapping part of our regular expression in parentheses, that portion is returned as an additional match. In all of our previous examples we were getting back matches that were a list with only one item. Once we start adding grouping to our regex, those lists will grow. In javascript, this list is an Array, and we can easily grab the second item from it. Your various programs may find different ways of getting at these lists.
 
 
-### Further Things to Cover ###
-
 #### Global Searches ####
 	
+Regular expressions will capture only the first match by default. They can be configured to act globally, though, and return all matches in a string. This feature is supported by almost every implementation of regex, but often in different ways. The most common way is to append a `g` after the end of the regex.
+
 	/.../g
+	
+#### Ignore Case ####
+
+If you want your regex to ignore the case of characters it is matching, you can usually dictate that in a similar way to how you make the search global. Instead of appending a `g` to the regex, you should append an `i`.
+
+	/.../i
 
 #### Greedy vs Lazy Searches ####
 	
@@ -313,20 +329,40 @@ By wrapping part of our regular expression in parentheses, that portion is retur
 
 #### Group without creating Capture Group ####
 
-	/(?:ABC)/
+At times you may want to use the grouping feature of regular expressions but do not want it to return a new capture group. For instance, if you want to look for either the word "center" or "centre", you might do something like this:
+
+	"center"
+	/cent(re|er)/
+	> center, er
+	
+But by using a special syntax in the group, you can omit the second capture group.
+	
+	"center"
+	/cent(?:re|er)/
+	> center
+	
+### Advanced Techniques ###
 
 #### Positive Lookahead ####
+
+Matches a group after your main expression without including it in the result.
 
 	/(?=ABC)/
 
 #### Negative Lookahead ####
 
+Specifies a group that can not match after your main expression (ie. if it matches, the result is discarded).
+
 	/(?!ABC)/
 
 #### Positive Lookbehind ####
 
+Matches a group before your main expression without including it in the result.
+
 	/(?<=ABC)/
 
 #### Negative Lookbehind ####
+
+Negative lookbehind. Specifies a group that can not match before your main expression (ie. if it matches, the result is discarded).
 
 	/(?<!ABC)/
