@@ -1,6 +1,7 @@
 # Regular Expressions #
 - - - - -
 
+
 Regular expressions, or regex, are a symbolic language that can define or identify a sequence of characters. This language can then be used to test, match, or replace a given body of text. 
 
 * By _test_ we mean it can evaluate if text is equivelent to the regex we defined. This is typically used for validation of things like email addresses, zip codes, phone numbers, and so on.
