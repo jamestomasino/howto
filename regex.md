@@ -8,13 +8,23 @@ Regular expressions, or regex, are a symbolic language that can define or identi
 
 * By _replace_ we refer to a combination of `match` and substitution. We match something, then replace the matched portion with new content, updating the original string.
 
-#### Play Along ####
+#### Getting Started ####
 
-You can go to [this page](http://gskinner.com/RegExr/) to try out any of these regular expression examples or make up your own. Simply copy the string we are trying to match to the big section on the bottom and enter your regular expressions on the top line.
+In the examples below I will attempt to show you sample regular expressions in three line groupings. The top line represents the string we are attempting to test/match/replace. Our regular expressions will appear below it between the `/.../` characters. Finally, the output of the operation will appear on lines starting with `>`. For example:
 
-_Note: Don't copy the string's surrounding quotes. It may break later examples._
+	"Sample String"
+	/SampleRegex/
+	> Output
 
-_Note 2: When copying the regex, the surrounding slashes will disappear in the testing tool._
+> _Note: The `>` character is just there to show you the result. It isn't part of the result itself._
+
+You can go to [this page](http://gskinner.com/RegExr/) to try out any of these regular expression examples or make up your own. Simply copy the string we are trying to match to the big section on the bottom.
+
+> _Note: Don't copy the string's surrounding quotes. It may break later examples._
+
+Then, copy your regex, or retype it onto the top line.
+
+> _Note: When copying the regex, the surrounding slashes will disappear in the testing tool._
 
 
 #### Basic Structure ####
@@ -51,15 +61,19 @@ That is a fairly complex regular expression. If you didn't follow along for ever
 
 #### Matching Literals ####
 
-The simplest way to match something using Regex is to use a literal string. In this example, the top line is the string we are going to try and match. Regular expressions will appear below it between the `/.../` characters. Finally, the output of the match will appear on lines starting with `>`. The `>` character is just there to show you the result. It isn't part of the result itself.
+The simplest way to match something using Regex is to use a literal string. 
 
 For example:
 
 	"The quick brown fox jumps over the lazy dog."
 	/quick/
 	> quick
+	
+	"The quick brown fox jumps over the lazy dog."
 	/jum/
 	> jum
+	
+	"The quick brown fox jumps over the lazy dog."
 	/moo/
 	> 
 
