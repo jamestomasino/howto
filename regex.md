@@ -1,4 +1,5 @@
-## Regular Expressions ##
+# Regular Expressions #
+- - - - -
 
 Regular expressions, or regex, are a symbolic language that can define or identify a sequence of characters. This language can then be used to test, match, or replace a given body of text. 
 
