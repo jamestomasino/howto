@@ -12,6 +12,10 @@ Regular expressions, or regex, are a symbolic language that can define or identi
 
 You can go to [this page](http://gskinner.com/RegExr/) to try out any of these regular expression examples or make up your own. Simply copy the string we are trying to match to the big section on the bottom and enter your regular expressions on the top line.
 
+_Note: Don't copy the string's surrounding quotes. It may break later examples._
+
+_Note 2: When copying the regex, the surrounding slashes will disappear in the testing tool._
+
 
 #### Basic Structure ####
 
@@ -182,5 +186,133 @@ Lets take a little break and review what you've learned.
 * Zero or More
 	* A * after a regex symbol, character, or set and it will match zero-or-more of them.
 	
-#### Challenge 1 ####
+- - - - -
 
+#### Beginnings and Endings ####
+
+Sometimes you want to match something at the very beginning or very end of a string. This happens a lot when testing for validation, but also when trying to grab the first or last word with a match. There are two characters responsible for this behavior, `^` and `$`. 
+
+Remember when I mentioned that the caret worked differently outside of a bracket? Here it is! The caret marks a search as applying only to the beginning of a string.
+
+	"Somewhere I have never travelled, gladly beyond"
+	/^Some/
+	> Some
+	
+	"Somewhere I have never travelled, gladly beyond"
+	/^travelled/
+	> 
+
+Despite _travelled_ being a valid match, it is not at the beginning of the string. Therefore this regex returns nothing.
+
+We can test the end of the string by putting the `$` character at the end of our regular expression.
+
+	"Somewhere I have never travelled, gladly beyond"
+	/beyond$/
+	> beyond
+	
+	"Somewhere I have never travelled, gladly beyond"
+	/travelled$/
+	> 
+
+Since _travelled_ isn't at the end of the string, it doesn't match either.
+
+You can use both of these together to test an entire string in its completion. This is very common with validation tests. Here is a simple zip-code validation example. We're almost ready to build something like this ourselves!
+
+	/^[0-9]{5}([- \/]?[0-9]{4})?$/
+	
+#### This or That ####
+
+Sometimes you need to match one thing or another. Maybe your string is valid if it ends in _.com_ or _.org_. The `|` operator will do that for you.
+
+In this example, we want to write a regular expression that will match either strings that are all alphabetical or all numeric, but not ones that do both. See if you can pick this regex apart into its pieces and follow along.
+
+	/^[A-Za-z]+$|^[0-9]+$/
+	
+Here's an example that will match either _.com_ or _.org_:
+
+	/\.com|\.org/
+	
+#### Some special characters ####
+
+You have quite a library of tools at your disposal and you can now accomplish most simple tasks with regex. This section aims to simplify some of those tasks by introducing a few special characters to make your lives easier.
+
+`\w` - Word character. Matches any character that is alphanumeric or an underscore.
+
+`\d` - Digit character. Matches any digit 0-9.
+
+`\s` - Whitespace character. Matches spaces, tabs, or line breaks.
+
+`\W` - NOT word character. Matches anything that isn't a word character.
+
+`\D` - NOT digit character. Matches anything not a digit character.
+
+`\S` - NOT whitespace character. Matches anything not a whitespace character.
+
+Try tossing some of these characters into your tests and see what you can accomplish.
+
+
+#### Specifying a number of characters ####
+
+Occasionally you need an exact number of characters. In the case of zip codes, you either need 5 or 9 digits. If you need to specify the number of characters, curly braces will denote this.
+
+`/.{4}/` - will match any 4 characters
+
+`\d{3|5}` - will match any 3 or 5 digits
+
+#### Grouping ####
+
+The last piece of regular expressions I want to cover is grouping. By wrapping all or part of your expressions in parentheses you can match not only the entire string, but smaller portions as well. 
+
+In a real world example from JavaScript, we have grabbed the css class names off of a button. The string we have looks like this:
+
+	button button_2 draggable index_15
+
+We want to get the number off of the _button_2_ portion of this string. Lets start by searching for the first occurrance of one or more digits.
+
+	/\d+/
+	> 2
+	
+But what if those classes might not be in that order? What if index_15 happened to be first? We need to look more carefully for the right class name.
+
+	/button_\d+/
+	> button_2
+	
+This gets us the right class no matter what, but we have too much information. We only want the number, not the whole word.
+
+	/button_(\d+)/
+	> button_2, 2
+
+By wrapping part of our regular expression in parentheses, that portion is returned as an additional match. In all of our previous examples we were getting back matches that were a list with only one item. Once we start adding grouping to our regex, those lists will grow. In javascript, this list is an Array, and we can easily grab the second item from it. Your various programs may find different ways of getting at these lists.
+
+
+### Further Things to Cover ###
+
+#### Global Searches ####
+	
+	/.../g
+
+#### Greedy vs Lazy Searches ####
+	
+`*?` - Matches 0 or more of the preceeding token. This is a lazy match, and will match as few characters as possible before satisfying the next token.
+
+`+?` - Matches 1 or more of the preceeding token. This is a lazy match, and will match as few characters as possible before satisfying the next token.
+
+#### Group without creating Capture Group ####
+
+	/(?:ABC)/
+
+#### Positive Lookahead ####
+
+	/(?=ABC)/
+
+#### Negative Lookahead ####
+
+	/(?!ABC)/
+
+#### Positive Lookbehind ####
+
+	/(?<=ABC)/
+
+#### Negative Lookbehind ####
+
+	/(?<!ABC)/
