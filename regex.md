@@ -257,7 +257,7 @@ Occasionally you need an exact number of characters. In the case of zip codes, y
 
 `/.{4}/` - will match any 4 characters
 
-`\d{3|5}` - will match any 3 or 5 digits
+`/\d{3|5}/` - will match any 3 or 5 digits
 
 #### Grouping ####
 
