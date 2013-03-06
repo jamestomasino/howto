@@ -49,9 +49,9 @@ This is a regular expression that matches a 24bit hexidecimal color value (think
 
 Now, lets take our example and break it apart into its components to see what each one does.
 
-* `/.../` - The outer forward slashes donote the start and end of a regular expression. This is the format you'll see in JavaScript, ActionScript, sed, vi, sublime, and many more. VBScript in Excel often uses `"..."` instead. If you are using the webpage I linked above to test these regular expressions, it will automatically strip the slashes since it knows everything on that line is meant to be regex already.
+* `/.../` - The outer forward slashes donote the start and end of a regular expression. This is the format you'll see in JavaScript, ActionScript, sed, vi, sublime, and many more. VBScript in Excel often uses `"..."` instead. 
 * `#?` - In this case, the \# sign means a literal pound sign. The question mark after it means that it is optional. If it's not there, that's ok too.
-* `[…]` - Everything between square brackets is summed up as a single character. This enables us to say, "the next character will be…" then lay out all the rules for it inside the brackets.
+* `[...]` - Everything between square brackets is summed up as a single character. This enables us to say, "the next character will be…" then lay out all the rules for it inside the brackets.
 * `0-9` - A number between 0 and 9, inclusive
 * `A-F` - A character between capital A and capital F
 * `a-f` - Lowercase is ok too
