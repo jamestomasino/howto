@@ -55,7 +55,7 @@ Now, lets take our example and break it apart into its components to see what ea
 * `0-9` - A number between 0 and 9, inclusive
 * `A-F` - A character between capital A and capital F
 * `a-f` - Lowercase is ok too
-* `{6}` - Whatever the last character rule was, it applies to the next 6 characters
+* `{6}` - Whatever the last character rule was, it applies to exactly 6 characters
 
 That is a fairly complex regular expression. If you didn't follow along for everything, that's ok. We'll go over each rule in sequence in a moment. For now just try to understand that regex isn't made up of sorcery. Each character has a rule, and if you learn them, that's all there is to it.
 
