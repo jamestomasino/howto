@@ -361,10 +361,14 @@ Specifies a group that can not match after your main expression (ie. if it match
 
 Matches a group before your main expression without including it in the result.
 
+_Note: Javascript cannot perform Lookbehinds._
+
 	/(?<=ABC)/
 
 #### Negative Lookbehind ####
 
 Negative lookbehind. Specifies a group that can not match before your main expression (ie. if it matches, the result is discarded).
+
+_Note: Javascript cannot perform Lookbehinds._
 
 	/(?<!ABC)/
