@@ -2,8 +2,8 @@
 
 ## Install homebrew:
 
-	$ sudo chown -R `whoami` /usr/local	
-	$ ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)	
+	$ sudo chown -R `whoami` /usr/local
+	$ ruby -e '$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)'	
 	$ brew install wget
 	
 ## Install git
@@ -17,7 +17,7 @@
 
 ## Install git-completion
 
-	$ brew install bash-completion
+	$ brew install git bash-completion
 	
 Edit your `~/.bash_profile` and add the following:
 	
