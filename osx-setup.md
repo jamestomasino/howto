@@ -36,7 +36,7 @@ Restart your terminal or run:
 
 ## Install gitflow
 
-	$ brew install git-flow-avh --HEAD
+	$ brew install git-flow-avh
 
 ## Install git-completion
 
