@@ -36,7 +36,17 @@ Restart your terminal or run:
 
 ## Install gitflow
 
-	$ brew install git-flow-avh --HEAD
+	$ brew install git-flow-avh
+	
+Edit your `~/.bashrc` and add the following:
+
+	export FLAGS_GETOPT_CMD="$(brew --prefix gnu-getopt)/bin/getopt"
+	
+Edit your `~/.bash_profile` and verify that you have the following:
+
+	if [ -f ~/.bashrc ] ; then
+		. ~/.bashrc
+	fi
 
 ## Install git-completion
 
@@ -68,17 +78,18 @@ Edit your `~/.bash_profile` and add the following:
 
 # Troubleshooting
 
-* Error similar to:
+## Error similar to:
 
-		flags:ERROR short flag required for (showcommands) on this platform
-		flags:ERROR short flag required for (local) on this platform
-		flags:ERROR short flag required for (global) on this platform
-		flags:ERROR short flag required for (system) on this platform
-		flags:ERROR short flag required for (file) on this platform
-		/usr/local/bin/gitflow-common: line 79: [: -eq: unary operator expected
-		/usr/local/bin/gitflow-common: line 79: [: -eq: unary operator expected
-		/usr/local/bin/gitflow-common: line 79: [: -eq: unary operator expected
+	flags:ERROR short flag required for (showcommands) on this platform
+	flags:ERROR short flag required for (local) on this platform
+	flags:ERROR short flag required for (global) on this platform
+	flags:ERROR short flag required for (system) on this platform
+	flags:ERROR short flag required for (file) on this platform
+	/usr/local/bin/gitflow-common: line 79: [: -eq: unary operator expected
+	/usr/local/bin/gitflow-common: line 79: [: -eq: unary operator expected
+	/usr/local/bin/gitflow-common: line 79: [: -eq: unary operator expected
 
-	`gnu-getopt` did not install properly. 
+`gnu-getopt` did not install properly. To fix, try:
 	
-	Double check that you successfully ran ``sudo chown -R `whoami` /usr/local``. Then run `brew install gnu-getopt --force`.
+	$ sudo chown -R `whoami` /usr/local 
+	$ brew remove gnu-getopt ; brew install --build-from-source gnu-getopt
