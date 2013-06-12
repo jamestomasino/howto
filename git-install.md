@@ -1,5 +1,14 @@
 # git Installation - OSX
 
+## Dependencies
+	Start by installing command line tools via XCode
+
+## Remove system Ruby and install RVM
+	$ sudo rm `which ruby`
+	$ \curl -L https://get.rvm.io | bash
+	$ echo "source $HOME/.rvm/scripts/rvm" >> ~/.bash_profile
+	$ source ~/.rvm/scripts/rvm
+
 ## Install homebrew:
 
 	$ sudo chown -R `whoami` /usr/local
