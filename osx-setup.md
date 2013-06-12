@@ -1,13 +1,22 @@
-# git Installation - OSX
+# OSX Development Environment Setup
 
 ## Dependencies
-	Start by installing command line tools via XCode
+
+Install [command line tools](http://connect.apple.com/). You can do this via XCode.
 
 ## Remove system Ruby and install RVM
 	$ sudo rm `which ruby`
 	$ \curl -L https://get.rvm.io | bash
-	$ echo "source $HOME/.rvm/scripts/rvm" >> ~/.bash_profile
-	$ source ~/.rvm/scripts/rvm
+	
+Edit your `~/.bash_profile` and add the following:
+	
+	if [ -f $HOME/.rvm/scripts/rvm ]; then
+		source $HOME/.rvm/scripts/rvm
+	fi
+	
+Restart your terminal or run: 
+	
+	$ source ~/.bash_profile
 
 ## Install homebrew:
 
@@ -38,7 +47,7 @@ Restart your terminal or run:
 	
 	$ source ~/.bash_profile
 
-## Install git-flow-complet
+## Install git-flow-completion
 	
 	$ wget https://raw.github.com/petervanderdoes/git-flow-completion/develop/git-flow-completion.bash
 	$ chmod 755 git-flow-completion.bash
@@ -51,46 +60,8 @@ Edit your `~/.bash_profile` and add the following:
 	fi
 	
 
-## Basic Usage
 
-* To initializatize a new repo
-	
-  		git flow init
-
-* To list/start/finish/delete feature branches, use:
-
-  		git flow feature
-  		git flow feature start <name> [<base>]
-  		git flow feature finish <name>
-  		git flow feature delete <name>
-
-  For feature branches, the `<base>` arg must be a commit on `develop`.
-
-* To push/pull a feature branch to the remote repository, use:
-
-  		git flow feature publish <name>
-		git flow feature pull <remote> <name>
-
-* To list/start/finish/delete release branches, use:
-
-  		git flow release
-  		git flow release start <release> [<base>]
-  		git flow release finish <release>
-  		git flow release delete <release>
-
-  For release branches, the `<base>` arg must be a commit on `develop`.
-
-* To list/start/finish/delete hotfix branches, use:
-
-  		git flow hotfix
-  		git flow hotfix start <release> [<base>]
-  		git flow hotfix finish <release>
-  		git flow hotfix delete <release>
-
-  For hotfix branches, the `<base>` arg must be a commit on `master`.
-
-
-## Troubleshooting
+# Troubleshooting
 
 * Error similar to:
 
