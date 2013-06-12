@@ -2,7 +2,12 @@
 
 ## Dependencies
 
-Install [command line tools](http://connect.apple.com/). You can do this via XCode.
+Either:
+
+- Install XCode
+- Or install `gcc` [directly, without XCode](https://github.com/kennethreitz/osx-gcc-installer)
+
+Install [command line tools](http://connect.apple.com/)
 
 ## Remove system Ruby and install RVM
 	$ sudo rm `which ruby`
