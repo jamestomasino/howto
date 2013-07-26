@@ -37,6 +37,7 @@ Restart your terminal or run:
 
 	$ sudo chown -R `whoami` /usr/local
 	$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+	$ brew update && brew upgrade
 	$ brew install wget
 	
 ## Install git
