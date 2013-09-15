@@ -97,6 +97,9 @@ Edit your `~/.bash_profile` and add the following:
 	$ pip install --upgrade setuptools && pip install --upgrade pip
 	$ brew install macvim
 	$ brew linkapps
+	$ brew install mercurial
+	$ brew install vim
+	$ sudo mv /usr/bin/vim /usr/bin/vim72
 
 
 # Troubleshooting
