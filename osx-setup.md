@@ -33,6 +33,11 @@ Restart your terminal or run:
 	
 	$ source ~/.bash_profile
 
+## Set up Ruby 1.9.3 as the default
+
+        $ rvm install 1.9.3
+        $ rvm use --default 1.9.3
+
 ## Install homebrew:
 
 	$ sudo chown -R `whoami` /usr/local
