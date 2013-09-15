@@ -94,6 +94,7 @@ Edit your `~/.bash_profile` and add the following:
 ## Installing vim and MacVim (in progress)
 
 	$ brew install python
+	$ pip install --upgrade setuptools && pip install --upgrade pip
 	$ brew install macvim
 	$ brew linkapps
 
