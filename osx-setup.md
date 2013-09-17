@@ -67,6 +67,8 @@ Edit your `~/.bash_profile` and verify that you have the following:
 ## Install git-completion
 
 	$ brew install git bash-completion
+	$ brew install --build-from-source gnu-getopt
+	$ echo 'export FLAGS_GETOPT_CMD="$(brew --prefix gnu-getopt)/bin/getopt' > ~/.gitflow_export
 	
 Edit your `~/.bash_profile` and add the following:
 	
@@ -119,3 +121,4 @@ Edit your `~/.bash_profile` and add the following:
 	
 	$ sudo chown -R `whoami` /usr/local 
 	$ brew remove gnu-getopt ; brew install --build-from-source gnu-getopt
+	$ echo 'export FLAGS_GETOPT_CMD="$(brew --prefix gnu-getopt)/bin/getopt' > ~/.gitflow_export
