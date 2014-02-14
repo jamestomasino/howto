@@ -9,13 +9,7 @@ Either:
 
 Install [command line tools](http://connect.apple.com/)
 
-# One-line Install #
-
-If you're really crazy, you could try installing everything below with this one-line curl script. I've never tried it before, so it might blow up everything. Good luck!
-
-    $ \curl -L https://raw.github.com/jamestomasino/howto/master/osx-setup.sh | bash
-
-# Manual Install #
+# Install #
 
 This method is probably safer as you can see the output from each step. Plus, the installers for `homebrew` and `rvm` keep changing on me and sometimes this guide is out of date.
 
