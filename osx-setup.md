@@ -34,8 +34,11 @@ Restart your terminal or run:
 
 ## Install homebrew:
 
-	$ sudo chown -R `whoami` /usr/local
-	$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+	$ sudo dseditgroup -o edit -a ``whoami`` -t user admin
+	$ sudo dseditgroup -o edit -a ``whoami`` -t user wheel
+	$ sudo chmod -R g+w /usr/local/
+	$ rvm use homebrew
+	$ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 	$ brew update && brew upgrade
 	$ brew install wget
 	
