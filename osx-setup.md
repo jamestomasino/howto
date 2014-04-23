@@ -99,6 +99,7 @@ Edit your `~/.bash_profile` and add the following:
 	$ brew linkapps
 	$ brew install mercurial
 	$ brew install vim
+	$ brew install tmux
 	$ sudo mv /usr/bin/vim /usr/bin/vim72
 
 
