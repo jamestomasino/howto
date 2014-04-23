@@ -39,6 +39,7 @@ Restart your terminal or run:
 	$ sudo chmod -R g+w /usr/local/
 	$ rvm use homebrew
 	$ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+	$ brew doctor
 	$ brew update && brew upgrade
 	$ brew install wget
 	
