@@ -2,8 +2,6 @@
 
 ## Dependencies
 
-Either:
-
 - Install XCode
 - Install [command line tools](http://connect.apple.com/)
 
