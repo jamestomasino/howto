@@ -92,7 +92,7 @@ Edit your `~/.bash_profile` and add the following:
 	$ brew install macvim
 	$ brew linkapps
 	$ brew install mercurial
-	$ brew install vim
+	$ brew install vim --with-python3 --with-tcl --with-perl --override-system-vi
 	$ brew install tmux
 	$ sudo mv /usr/bin/vim /usr/bin/vim72
 
