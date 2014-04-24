@@ -5,9 +5,7 @@
 Either:
 
 - Install XCode
-- Or install `gcc` [directly, without XCode](https://github.com/kennethreitz/osx-gcc-installer)
-
-Install [command line tools](http://connect.apple.com/)
+- Install [command line tools](http://connect.apple.com/)
 
 # Install #
 
