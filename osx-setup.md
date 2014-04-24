@@ -7,8 +7,8 @@
 
 # Install #
 
-## Remove system Ruby and install RVM
-	$ sudo rm `which ruby`
+## Backup system Ruby and install RVM instead
+	$ sudo mv `which ruby` `which ruby`-old
 	$ \curl -L https://get.rvm.io | bash
 	
 Edit your `~/.bash_profile` and add the following:
