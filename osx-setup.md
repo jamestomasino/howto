@@ -96,6 +96,10 @@ Edit your `~/.bash_profile` and add the following:
 	$ brew install tmux
 	$ sudo mv /usr/bin/vim /usr/bin/vim72
 
+## Fixing broken stuff in OSX
+
+	$ brew install gnu-sed --default-names
+
 
 # Troubleshooting
 
