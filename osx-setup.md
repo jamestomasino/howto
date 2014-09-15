@@ -32,10 +32,10 @@ Restart your terminal or run:
 	
 	$ source ~/.bash_profile
 
-## Set up Ruby 1.9.3 as the default
+## Set up Ruby 2.0 as the default
 
-	$ rvm install 1.9.3
-	$ rvm use --default 1.9.3
+	$ rvm install 2.0
+	$ rvm use --default 2.0
 
 ## Install git
 
