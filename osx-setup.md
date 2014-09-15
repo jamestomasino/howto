@@ -7,9 +7,20 @@
 
 # Install #
 
+## Install homebrew:
+
+	$ sudo dseditgroup -o edit -a ``whoami`` -t user admin
+	$ sudo dseditgroup -o edit -a ``whoami`` -t user wheel
+	$ sudo chmod -R g+w /usr/local/
+	$ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+	$ brew doctor
+	$ brew update && brew upgrade
+	$ brew install wget
+
 ## Backup system Ruby and install RVM instead
 	$ sudo mv `which ruby` `which ruby`-old
 	$ \curl -L https://get.rvm.io | bash
+	$ rvm use homebrew
 	
 Edit your `~/.bash_profile` and add the following:
 	
@@ -26,17 +37,6 @@ Restart your terminal or run:
 	$ rvm install 1.9.3
 	$ rvm use --default 1.9.3
 
-## Install homebrew:
-
-	$ sudo dseditgroup -o edit -a ``whoami`` -t user admin
-	$ sudo dseditgroup -o edit -a ``whoami`` -t user wheel
-	$ sudo chmod -R g+w /usr/local/
-	$ rvm use homebrew
-	$ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-	$ brew doctor
-	$ brew update && brew upgrade
-	$ brew install wget
-	
 ## Install git
 
 	$ sudo mv /usr/bin/git /usr/bin/git-old
